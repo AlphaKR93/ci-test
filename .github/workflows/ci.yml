@@ -10,4 +10,4 @@ jobs:
       - name: Check network connection
         id: network
         run: |
-          curl -v "$(curl -s 'https://api.github.com/repos/AlphaKR93/.github/releases/tags/ci' | jq -r ".assets[] | select(.name == "content") | .browser_download_url")"
+          curl -v "$(curl -s 'https://api.github.com/repos/AlphaKR93/.github/releases/tags/ci' | jq -r '.assets[] | select(.name == "content") | .browser_download_url')"
